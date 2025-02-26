@@ -3,8 +3,16 @@
 이 프로젝트는 온라인 서점 웹사이트를 구현한 풀스택 애플리케이션입니다.  
 이 애플리케이션을 통해 사용자는 도서를 검색하고, 상세 정보를 확인하며, 도서를 추가/수정/삭제할 수 있습니다.
 
-- **프론트엔드**: React + TypeScript
-- **백엔드**: Node.js + Express + JSON 파일 기반 데이터베이스
+**프론트엔드**
+- React.js + TypeScript
+- React Router를 활용한 페이지 이동
+- API 연동을 위한 Axios
+**백엔드**
+- Node.js + Express.js
+- Mongoose를 이용한 MongoDB 데이터 모델링, 저장 및 관리
+- RESTful API 설계
+**데이터베이스**
+- MongoDB Atlas: 클라우드 기반의 MongoDB 사용
 
 ---
 
