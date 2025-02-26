@@ -7,10 +7,12 @@
 - React.js + TypeScript
 - React Router를 활용한 페이지 이동
 - API 연동을 위한 Axios
+
 **백엔드**
 - Node.js + Express.js
 - Mongoose를 이용한 MongoDB 데이터 모델링, 저장 및 관리
 - RESTful API 설계
+
 **데이터베이스**
 - MongoDB Atlas: 클라우드 기반의 MongoDB 사용
 
