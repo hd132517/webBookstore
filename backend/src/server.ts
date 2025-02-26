@@ -1,7 +1,7 @@
+import dotenv from "dotenv";
 import express from "express";
 import cors from "cors";
 import helmet from "helmet";
-import dotenv from "dotenv";
 import mongoose from "mongoose";
 import bookRoutes from "./routes/bookRoutes";
 import { errorHandler } from "./middleware/errorHandler";
@@ -10,9 +10,8 @@ dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-
-// MongoDB 연결
-const mongoURI = process.env.MONGO_URI || "mongodb+srv://user:p7qC6O26zFUuhuoc@webbookstorecluster.j4wyf.mongodb.net/?retryWrites=true&w=majority&appName=webBookstoreCluster"; // MongoDB URI
+const mongoURI = process.env.MONGODB_URI || ''; // MongoDB URI
+const CLIENT_URL = process.env.CLIENT_URL || 'http://localhost:3000'
 
 if (mongoose.connection.readyState === 0) {
     mongoose
@@ -27,7 +26,7 @@ if (mongoose.connection.readyState === 0) {
 }
 
 // CORS 설정 강화
-const allowedOrigins = ["http://localhost:3000"]; // 필요 시 도메인 추가
+const allowedOrigins = [CLIENT_URL]; // 필요 시 도메인 추가
 app.use(
   cors({
     origin: allowedOrigins,
