@@ -9,7 +9,7 @@
 - API 연동을 위한 Axios
 
 **백엔드**
-- Node.js + Express.js
+- Node.js + Express.js + TypeScript
 - Mongoose를 이용한 MongoDB 데이터 모델링, 저장 및 관리
 - RESTful API 설계
 
