@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { fetchBookById, updateBook, deleteBook } from "../api";
 import { Book } from "../types";
+import "./BookDetail.css";
 
 const BookDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>(); // id는 string으로 처리
@@ -38,14 +39,16 @@ const BookDetail: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className="book-detail-container">
       <h1>{book.title}</h1>
       <p>저자: {book.author}</p>
       <p>설명: {book.description}</p>
       <p>수량: {book.quantity}</p>
-      <button onClick={() => handleQuantityChange(book.quantity + 1)}>수량 증가</button>
-      <button onClick={() => handleQuantityChange(book.quantity - 1)}>수량 감소</button>
-      <button onClick={handleDelete}>삭제</button>
+      <div className="book-detail-actions">
+            <button onClick={() => handleQuantityChange(book.quantity + 1)}>수량 증가</button>
+            <button onClick={() => handleQuantityChange(book.quantity - 1)}>수량 감소</button>
+            <button onClick={handleDelete}>삭제</button>
+      </div>
     </div>
   );
 };

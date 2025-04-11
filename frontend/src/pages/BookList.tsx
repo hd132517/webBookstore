@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { fetchBooks } from "../api";
 import { Book } from "../types";
+import "./BookList.css";
 
 const BookList: React.FC = () => {
   const [books, setBooks] = useState<Book[]>([]);
@@ -16,7 +17,6 @@ const BookList: React.FC = () => {
       setBooks(books);
       setTotalPages(totalPages);
     };
-
     fetchData();
   }, [query, page]); // 검색어(query)나 페이지(page)가 변경될 때마다 호출
 
@@ -30,33 +30,49 @@ const BookList: React.FC = () => {
   };
 
   return (
-    <div>
-      <h1>책 목록</h1>
+    <div className="booklist-container">
+      <h1 className="booklist-title">📚 서점 도서 목록</h1>
+
       <input
         type="text"
+        className="booklist-search"
         placeholder="제목 또는 저자 검색"
         value={query}
         onChange={handleSearchChange}
       />
-      <ul>
-        {books.map((book) => (
-          <li key={book._id}>
-            <Link to={`/books/${book._id}`}>
+
+      {books.length > 0 ? (
+        <ul className="booklist-ul">
+          {books.map((book) => (
+            <li key={book._id} className="booklist-item">
+              <Link to={`/books/${book._id}`}>
                 <h2>{book.title}</h2>
                 <p>{book.author}</p>
-            </Link>
-          </li>
-        ))}
-      </ul>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p className="booklist-empty">검색 결과가 없습니다.</p>
+      )}
 
-      {/* 페이지네이션 */}
-      <div>
-        <button onClick={() => handlePageChange(page - 1)} disabled={page === 1}>
-          이전
+      <div className="booklist-pagination">
+        <button
+          onClick={() => handlePageChange(page - 1)}
+          disabled={page === 1}
+          className="booklist-button"
+        >
+          ◀ 이전
         </button>
-        <span>페이지 {page} / {totalPages}</span>
-        <button onClick={() => handlePageChange(page + 1)} disabled={page === totalPages}>
-          다음
+        <span>
+          페이지 <strong>{page}</strong> / {totalPages}
+        </span>
+        <button
+          onClick={() => handlePageChange(page + 1)}
+          disabled={page === totalPages}
+          className="booklist-button"
+        >
+          다음 ▶
         </button>
       </div>
     </div>

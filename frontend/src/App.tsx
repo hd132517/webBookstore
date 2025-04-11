@@ -8,7 +8,7 @@ import "./App.css";
 const App: React.FC = () => (
   <Router>
     <nav className="navbar">
-      <h1 className="logo">📚 Bookstore</h1>
+      <h1 className="logo">📚 webBookstore</h1>
       <div className="nav-links">
         <Link to="/" className="nav-link">Home</Link>
         <Link to="/add" className="nav-link">Add Book</Link>

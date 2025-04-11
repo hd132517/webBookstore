@@ -1,0 +1,105 @@
+/* BookList.css */
+
+.booklist-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+.booklist-title {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #2c3e50;
+}
+
+.booklist-search {
+  width: 100%;
+  padding: 14px 20px;
+  margin-bottom: 30px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  box-sizing: border-box;
+}
+
+.booklist-ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.booklist-item {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.booklist-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.booklist-item h2 {
+  font-size: 18px;
+  margin: 0 0 8px 0;
+  color: #34495e;
+}
+
+.booklist-item p {
+  margin: 0;
+  color: #7f8c8d;
+}
+
+.booklist-item a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+}
+
+.booklist-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  gap: 20px;
+}
+
+.booklist-button {
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: none;
+  background-color: #2980b9;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.booklist-button:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+.booklist-button:not(:disabled):hover {
+  background-color: #1c5980;
+}
+
+.booklist-empty {
+  text-align: center;
+  color: #aaa;
+  margin-top: 40px;
+  font-size: 18px;
+}

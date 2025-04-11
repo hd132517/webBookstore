@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { addBook } from "../api";
 import { useNavigate } from "react-router-dom";
+import "./AddBook.css";
 
 const AddBook: React.FC = () => {
   const navigate = useNavigate();
@@ -20,9 +21,9 @@ const AddBook: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className="add-book-container">
       <h1>책 추가</h1>
-      <form onSubmit={handleSubmit}>
+      <form className="add-book-form" onSubmit={handleSubmit}>
         <div>
           <label>제목:</label>
           <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} required />
